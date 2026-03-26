@@ -1,0 +1,6 @@
+version: "1"
+rules:
+  - base: main        # Nhánh trên fork của bạn (đích)
+    upstream: sharevb:chore/all-my-stuffs # Chủ sở hữu và nhánh gốc (nguồn)
+    mergeMethod: merge # Cách xử lý: merge (gộp), rebase, hoặc hardreset (ghi đè hoàn toàn)
+    mergeUnstable: false # Chỉ merge khi các test (CI) của upstream đã pass
