@@ -106,6 +106,40 @@ home:
       collection-of-handy-online-tools-for-developers-with-great-ux-it-tools-is-a-free-and-open-source-collection-of-handy-online-tools-for-developers-and-people-working-in-it: IT Tools 是一款免费开源的在线工具合集，为开发人员和 IT 从业人员提供便捷的在线工具，拥有出色的用户体验。
       it-tools-handy-online-tools-for-developers: IT 工具 - 方便的在线开发人员工具
 tools:
+  crop-image:
+    title: "裁剪图片"
+    description: "使用自定义背景颜色裁剪、调整大小和旋转图像."
+    texts:
+      drag-drop: "拖放您的图片到这里，或点击浏览"
+      drag-hint: "拖动以调整位置 • 滚动以缩放 ({zoom}%)"
+      flip-h: "水平翻转"
+      flip-v: "垂直翻转"
+      reset: "重置"
+      fit: "适应"
+      change-image: "更换图片"
+      aspect-ratio: "宽高比:"
+      custom-ratio: "自定义比例:"
+      background-color: "背景颜色:"
+      transparent: "透明"
+      zoom-image: "缩放图片:"
+      rotate-image: "旋转图片:"
+      rule-of-thirds-grid: "三分法则网格:"
+      export-settings: "导出设置"
+      export-format: "导出格式:"
+      image-quality: "图片质量:"
+      export-width: "导出宽度:"
+      custom-width: "自定义宽度 (px):"
+      export-download-image: "导出并下载裁剪后的图片"
+      ratio-square: "1:1 (正方形)"
+      ratio-widescreen: "16:9 (宽屏)"
+      ratio-portrait: "9:16 (肖像/竖屏)"
+      ratio-standard: "4:3 (标准)"
+      ratio-photo: "3:2 (照片)"
+      ratio-original: "原始宽高比"
+      ratio-custom: "自定义比例"
+      width-original: "原始裁剪大小"
+      width-viewport: "视口大小"
+      width-custom: "自定义宽度"
   chronometer:
     title: 秒表
     description: 监测某事物的持续时间。基本上是一个具备简单计时功能的秒表。
@@ -6696,11 +6730,11 @@ tools:
       tag-tb-gb: 结核病/英国
       tag-minimum-spares: 最低备件数量：
       tag-new-vdev-type: 新的 vdev 类型：
-      tag-mirror: 镜子
+      tag-mirror: 镜像
       tag-raidz1: RAIDZ1
       tag-raidz2: RAIDZ2
       tag-raidz3: RAIDZ3
-      tag-draid: 龙
+      tag-draid: dRAID
       tag-openzfs-2-0-7-slop: OpenZFS 2.0.7 斜率：
       tag-new-vdev-width: 新的 Vdev 宽度：
       tag-zfs-recordsize-value: ZFS 记录大小值：
@@ -6756,7 +6790,7 @@ tools:
       tag-click-on-the-section-titles-to-expand-collapse-and-view-calculated-data-hovering-over-a-table-cell-loads-the-relevant-data-into-the-calculation-values-section-below-you-can-click-table-cells-to-freeze-or-unfreeze-those-values: >-
         点击各部分标题即可展开/折叠并查看计算数据。将鼠标悬停在表格单元格上，相关数据会加载到下方的“计算值”部分。您可以点击表格单元格来冻结或解冻这些值。
       tag-common-layouts: 常见布局
-      tag-raw-stripes-mirrors: 原始、条纹和镜面
+      tag-raw-stripes-mirrors: 原始、条带和镜像
       tag-calculation-values: 计算值
       tag-click-table-cells-above-to-freeze-unfreeze: （单击上面的表格单元格即可冻结/解冻）
   zpool-memo:

@@ -77,6 +77,7 @@ formatTransformer:
   input-placeholder: Input...
   output: Output
   download: Download
+  viewer: Viewer
 textareaCopyable:
   copy: Copy to clipboard
   copied: Copied!
@@ -121,6 +122,40 @@ home:
         developers & people working in IT.
       it-tools-handy-online-tools-for-developers: IT Tools - Handy online tools for developers
 tools:
+  crop-image:
+    title: Crop image
+    description: Crop, resize, and rotate images with custom background colors.
+    texts:
+      drag-drop: Drag and drop your image here, or click to browse
+      drag-hint: Drag to position • Scroll to zoom ({zoom}%)
+      flip-h: Flip H
+      flip-v: Flip V
+      reset: Reset
+      fit: Fit
+      change-image: Change Image
+      aspect-ratio: 'Aspect Ratio:'
+      custom-ratio: 'Custom Ratio:'
+      background-color: 'Background Color:'
+      transparent: Transparent
+      zoom-image: 'Zoom Image:'
+      rotate-image: 'Rotate Image:'
+      rule-of-thirds-grid: 'Rule-of-Thirds Grid:'
+      export-settings: Export Settings
+      export-format: 'Export Format:'
+      image-quality: 'Image Quality:'
+      export-width: 'Export Width:'
+      custom-width: 'Custom Width (px):'
+      export-download-image: Export & Download Cropped Image
+      ratio-square: 1:1 (Square)
+      ratio-widescreen: 16:9 (Widescreen)
+      ratio-portrait: 9:16 (Portrait)
+      ratio-standard: 4:3 (Standard)
+      ratio-photo: 3:2 (Photo)
+      ratio-original: Original Aspect Ratio
+      ratio-custom: Custom Ratio
+      width-original: Original Crop Size
+      width-viewport: Viewport Size
+      width-custom: Custom Width
   chronometer:
     title: Chronometer
     description: >-
@@ -3088,6 +3123,37 @@ tools:
       title-drag-and-drop-an-image-here-or-click-to-select-a-file: Drag and drop an image here, or click to select a file
       tag-posterize: Posterize?
       tag-potrace-result: Potrace result
+      button-trace: Trace
+      minimum-angle-displacement-in-degrees-to-be-considered-a-cutting-point-between-curves: >-
+        Minimum Angle Displacement (in degrees) to be considered a cutting point
+        between curves
+      splice-threshold-more-accurate: 'Splice Threshold (More accurate):'
+      perform-iterative-subdivide-smooth-until-all-segments-are-shorter-than-this-length: >-
+        Perform Iterative Subdivide Smooth until all segments are shorter than
+        this length
+      length-threshold-more-coarse: 'Length Threshold (More coarse):'
+      minimum-momentary-angle-in-degrees-to-be-considered-a-corner-to-be-kept-after-smoothing: >-
+        Minimum Momentary Angle (in degrees) to be considered a corner (to be
+        kept after smoothing)
+      corner-threshold-smoother: 'Corner Threshold (Smoother):'
+      layer-difference: 'Layer Difference:'
+      number-of-significant-bits-to-use-in-a-rgb-channel: Number of significant bits to use in a RGB channel
+      color-precision-more-accurate: 'Color Precision (More accurate):'
+      color-difference-between-gradient-layers: Color difference between gradient layers
+      gradient-step-less-layers: 'Gradient Step (Less layers):'
+      discard-patches-small-than-x-px-in-size: Discard patches small than X px in size
+      filter-speckle-cleaner: 'Filter Speckle (Cleaner):'
+      hierarchical-mode: 'Hierarchical Mode:'
+      curve-fitting: 'Curve Fitting:'
+      color-vtracer: Color (VTracer)
+      color-potrace: Color (Potrace)
+      bw: BW
+      interpolate: Interpolate?
+      pixel: Pixel
+      polygon: Polygon
+      spline: Spline
+      stacked: Stacked
+      cutout: Cutout
   power-converter:
     title: Power Converter
     description: Convert values between power units
@@ -5147,6 +5213,8 @@ tools:
       label-brightness: Brightness
       label-grayscale: Grayscale
       label-invert: Invert
+      label-oklab: oklab
+      label-oklch: oklch
     models:
       text:
         invalid-label-tolowercase-format: Invalid {0} format.
@@ -5269,6 +5337,8 @@ tools:
   meta-tag-generator:
     texts:
       label-your-meta-tags: Your meta tags
+      isbn: ISBN
+      book: Book
     article:
       text:
         tag-words-associated-with-this-article: Tag words associated with this article...
@@ -5352,6 +5422,9 @@ tools:
         summary-with-large-image: Summary with large image
         summary: Summary
         twitter: Twitter
+        the-name-of-the-twitter-account-of-the-creator-ex-cthmsst: >-
+          The name of the Twitter account of the creator (ex{':'}
+          {'@'}cthmsst)...
     videoEpisode:
       text:
         which-series-this-episode-belongs-to: Which series this episode belongs to...
@@ -5372,6 +5445,50 @@ tools:
     videoOther:
       text:
         other-video-details: Other video details
+    website:
+      text:
+        article: Article
+        profile: Profile
+        song: Song
+        book: Book
+        music: Music
+        music-0: Music
+        music-album: Music album
+        playlist: Playlist
+        radio-station: Radio station
+        video: Video
+        video-0: Video
+        movie: Movie
+        episode: Episode
+        tv-show: TV Show
+        other-video: Other video
+        general-information: General Information
+        page-type: Page type
+        select-the-type-of-your-website: Select the type of your website...
+        enter-the-title-of-your-website: Enter the title of your website...
+        enter-the-description-of-your-website: Enter the description of your website...
+        page-url: Page URL
+        enter-the-url-of-your-website: Enter the url of your website...
+    ies-lighting-guidelines:
+      texts:
+        tag-application: Application
+    videoTVShow:
+      text:
+        tv-show-details: TV show details
+    basic-auth-generator:
+      username: Enter the username of the person...
+    qr-code-generator:
+      texts:
+        title-image: Image
+    qr-contact-info-generator:
+      texts:
+        label-website: Website
+    xslt-tester:
+      texts:
+        tag-title: Title
+    ical-generator:
+      texts:
+        label-description: Description
   regex-tester:
     title: Regex Tester
     description: Test your regular expressions with sample text.
@@ -5904,6 +6021,7 @@ tools:
       placeholder-paste-your-json-schema-here: Paste your JSON Schema here...
       title-schema-validation-errors: Schema Validation Errors
       label-unescape-json-string: 'Unescape JSON string:'
+      label-viewer: Viewer
     text:
       provided-json-is-not-valid: Provided JSON is not valid.
       try-again-with-repairjsonlabel: Try again with "{0}"
@@ -5993,6 +6111,23 @@ tools:
       label-fingerprint-base64: 'Fingerprint (base64):'
       label-fingerprint-asn1: 'Fingerprint (asn1):'
       label-fingerprint-ssh: 'Fingerprint (ssh):'
+      label-pem-header: 'PEM Header Type:'
+      autodetect: Autodetect
+      certificate-x-509: Certificate (X.509)
+      certificate-request-csr-pkcs-10: Certificate Request (CSR / PKCS#10)
+      private-key-pkcs-8: Private Key (PKCS#8)
+      public-key-pkcs-8: Public Key (PKCS#8)
+      encrypted-private-key-pkcs-8-encrypted: Encrypted Private Key (PKCS#8 Encrypted)
+      rsa-private-key-pkcs-1: RSA Private Key (PKCS#1)
+      rsa-public-key-pkcs-1: RSA Public Key (PKCS#1)
+      ec-private-key: EC Private Key
+      ec-parameters: EC Parameters
+      dsa-private-key: DSA Private Key
+      dsa-public-key: DSA Public Key
+      openssh-private-key: OpenSSH Private Key
+      ssh-public-key-rfc4716: SSH Public Key (RFC4716)
+      pgp-public-key-block: PGP Public Key Block
+      pgp-private-key-block: PGP Private Key Block
     service:
       text:
         type: 'Type:'
@@ -8724,6 +8859,15 @@ tools:
       tag-copy: Copy
       tag-refresh: Refresh
       text-picked-lines-copied-to-clipboard: Picked lines copied to clipboard!
+  markdown-to-data:
+    texts:
+      label-paste-your-markdown-content: 'Paste your markdown content:'
+      placeholder-your-markdown: Your markdown...
+  html-to-data:
+    texts:
+      label-paste-your-html-content: 'Paste your HTML content:'
+      placeholder-your-html: Your HTML here...
+      error-multiple-json-blocks: Cannot convert multiple tables at once
 collapsibleToolMenu:
   text:
     expanding: Expanding...

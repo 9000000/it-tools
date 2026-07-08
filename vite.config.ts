@@ -19,6 +19,8 @@ import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 
+import { visualizer } from 'rollup-plugin-visualizer';
+
 const baseUrl = process.env.BASE_URL || '/';
 
 const VITE_AVAILABLE_LOCALES = process.env.VITE_AVAILABLE_LOCALES;
@@ -65,9 +67,6 @@ export default defineConfig({
         },
       ],
       vueTemplate: true,
-      eslintrc: {
-        enabled: true,
-      },
     }),
     Icons({ compiler: 'vue3' }),
     vue({
@@ -122,6 +121,9 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: [NaiveUiResolver(), IconsResolver({ prefix: 'icon' })],
+      // dtsTsx generates invalid `const 'Name.demo':` declarations for
+      // components whose file names contain dots
+      dtsTsx: false,
     }),
     Unocss(),
     nodePolyfills(),
@@ -130,6 +132,7 @@ export default defineConfig({
       logoSrc: 'logo.svg',
       splashBg: '#383838',
     }),
+    visualizer(),
   ],
   base: baseUrl,
   resolve: {
@@ -163,35 +166,15 @@ export default defineConfig({
     reportCompressedSize: !process.env.VERCEL,
     // cssMinify: false,
     // modulePreload: false,
-    rollupOptions: {
+    rolldownOptions: {
       external: ['regex', './out/isolated_vm', 'isolated-vm', 'onnxruntime-node', 'unpdf/pdfjs'],
       output: {
         format: 'es',
-        // manualChunks: (id) => {
-        //   // if (id.includes('monaco-editor')) return 'monaco-editor';
-        //   if (id.includes('tesseract.js')) return 'tesseract.js';
-        //   if (id.includes('pdfjs')) return 'pdfjs';
-        //   if (id.includes('unicode')) return 'unicode';
-        //   // if (id.includes('transformers')) return 'transformers';
-        //   // if (id.includes("node_modules")) {
-        //   //   return "vendor";
-        //   // }
-        // },
-        // sourcemapIgnoreList: (relativeSourcePath) => {
-        //   const normalizedPath = path.normalize(relativeSourcePath);
-        //   return normalizedPath.includes("node_modules");
-        // },
       },
-      cache: false,
     },
   },
   optimizeDeps: {
-    include: ['isolated-vm', 'pdfjs-dist', 'onnxruntime-node', 'onnxruntime-web', 'unpdf', 'unpdf/pdfjs', ...(process.env.VERCEL ? ['webcrypto-liner-shim'] : [])], // optionally specify dependency name
-    esbuildOptions: {
-      supported: {
-        'top-level-await': true,
-      },
-    },
+    include: ['isolated-vm', '@lezer/highlight', 'pdfjs-dist', 'onnxruntime-node', 'onnxruntime-web', 'unpdf', 'unpdf/pdfjs', ...(process.env.VERCEL ? ['webcrypto-liner-shim'] : [])], // optionally specify dependency name
   },
   // server: {
   // headers: {
