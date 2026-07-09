@@ -50,3 +50,8 @@ components.d.ts
 *.vsix
 *.tsbuildinfo
 stats.html
+
+# Antigravity Agent
+.agent/
+GEMINI.md
+ERRORS.md
